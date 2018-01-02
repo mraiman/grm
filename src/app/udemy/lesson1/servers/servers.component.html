@@ -7,7 +7,7 @@
 <p>{{serverName}}</p>
 <button class="btn btn-info" 
     [disabled]="!allowNewServer"
-    (click)="onCreateServer()">Add server</button>
+    (click)="onCreateServer()">Add server!</button>
 <br><br>
 <p [innerText]="allowNewServer ? 'you can do it' : 'you cannot do it'"></p>
 <p>{{serverCreationStatus}}</p>
