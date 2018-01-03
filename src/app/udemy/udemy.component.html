@@ -1,6 +1,13 @@
 <br>
-<button type="button" class="btn btn-primary" routerLink="/udemy/1">Lesson 1</button>
-<button type="button" class="btn btn-primary" routerLink="/udemy/2">Lesson 2</button>
+<div *ngIf="lessons && lessons.length > 0" class="container">
+    <div class="row">
+        <div class="col-xs-2" *ngFor="let lesson of lessons; let i = index">
+            <button type="button" class="btn btn-primary" (click)="getPath(lesson.id)">{{lesson.name}}</button>
+        </div>
+    </div>
+</div>
+<!-- <button type="button" class="btn btn-primary" routerLink="/udemy/1">Lesson 1</button> -->
+
 <br>
 <br>
 <router-outlet></router-outlet>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as Classes from '../classes/classes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-udemy',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./udemy.component.css']
 })
 export class UdemyComponent implements OnInit {
+  lesson1: Classes.UdemyLesson;
+  lesson2: Classes.UdemyLesson;
+  lessons: Classes.UdemyLesson[] = [];
 
-  constructor() { }
+  constructor(public router: Router) {
+    this.lesson1 = new Classes.UdemyLesson('TestServers', 1);
+    this.lesson2 = new Classes.UdemyLesson('Course Project', 2);
+    this.lessons.push(this.lesson1);
+    this.lessons.push(this.lesson2);
+  }
 
   ngOnInit() {
+  }
+
+  getPath(i) {
+    this.router.navigate(['udemy/' + i]);
   }
 
 }
