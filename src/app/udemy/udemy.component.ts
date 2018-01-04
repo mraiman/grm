@@ -10,13 +10,16 @@ import { Router } from '@angular/router';
 export class UdemyComponent implements OnInit {
   lesson1: Classes.UdemyLesson;
   lesson2: Classes.UdemyLesson;
+  lesson3: Classes.UdemyLesson;
   lessons: Classes.UdemyLesson[] = [];
 
   constructor(public router: Router) {
     this.lesson1 = new Classes.UdemyLesson('TestServers', 1);
     this.lesson2 = new Classes.UdemyLesson('Course Project', 2);
+    this.lesson3 = new Classes.UdemyLesson('Blueprints', 3);
     this.lessons.push(this.lesson1);
     this.lessons.push(this.lesson2);
+    this.lessons.push(this.lesson3);
   }
 
   ngOnInit() {

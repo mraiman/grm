@@ -7,27 +7,34 @@ import { GrmComponent } from './grm/grm.component';
 
 import { Lesson1Component } from './udemy/lesson1/lesson1.component';
 import { Lesson2Component } from './udemy/lesson2/lesson2.component';
+import { Lesson3Component } from './udemy/lesson3/lesson3.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/udemy', pathMatch: 'full' },
   { path: 'sandbox', component: SandboxComponent },
   { path: 'grm', component: GrmComponent },
-  { path: 'udemy',
+  {
+    path: 'udemy',
     component: UdemyComponent,
     children: [
       {
-      path: '1',
-      component: Lesson1Component
+        path: '1',
+        component: Lesson1Component
       },
       {
         path: '2',
         component: Lesson2Component
-        }
-    ] }
+      },
+      {
+        path: '3',
+        component: Lesson3Component
+      }
+    ]
+  }
 ];
 
 @NgModule({
-  exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ]
+  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes)]
 })
 export class AppRoutingModule { }

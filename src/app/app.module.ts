@@ -19,6 +19,9 @@ import { RecipeDetailComponent } from './udemy/lesson2/recipes/recipe-detail/rec
 import { RecipeItemComponent } from './udemy/lesson2/recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './udemy/lesson2/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './udemy/lesson2/shopping-list/shopping-edit/shopping-edit.component';
+import { Lesson3Component } from './udemy/lesson3/lesson3.component';
+import { CockpitComponent } from './udemy/lesson3/cockpit/cockpit.component';
+import { ServerElementComponent } from './udemy/lesson3/server-element/server-element.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { ShoppingEditComponent } from './udemy/lesson2/shopping-list/shopping-ed
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    Lesson3Component,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,

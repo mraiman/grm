@@ -2,7 +2,7 @@
 <div *ngIf="lessons && lessons.length > 0" class="container">
     <div class="row">
         <div class="col-xs-2" *ngFor="let lesson of lessons; let i = index">
-            <button type="button" class="btn btn-primary" (click)="getPath(lesson.id)">{{lesson.name}}</button>
+            <button type="button" class="btn btn-primary" (click)="getPath(lesson.id)" style="width: 100%">{{lesson.name}}</button>
         </div>
     </div>
 </div>

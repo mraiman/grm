@@ -19,3 +19,8 @@ export class Recipe {
         this.imagePath = imagePath;
     }
 }
+
+export class Ingredient {
+
+    constructor(public name: string, public amount: number) { }
+}
