@@ -22,6 +22,22 @@ import { ShoppingEditComponent } from './udemy/lesson2/shopping-list/shopping-ed
 import { Lesson3Component } from './udemy/lesson3/lesson3.component';
 import { CockpitComponent } from './udemy/lesson3/cockpit/cockpit.component';
 import { ServerElementComponent } from './udemy/lesson3/server-element/server-element.component';
+import { Lesson4Component } from './udemy/lesson4/lesson4.component';
+import { BasicHighlightDirective } from './udemy/lesson4/basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './udemy/lesson4/better-highlight/better-highlight.directive';
+import { UnlessDirective } from './udemy/lesson4/unless.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
+import { Lesson5Component } from './udemy/lesson5/lesson5.component';
+import { AccountComponent } from './udemy/lesson5/account/account.component';
+import { NewAccountComponent } from './udemy/lesson5/new-account/new-account.component';
+
+import { AccountsService } from './services/accounts.service';
+import { LoggingService } from './services/logging.service';
+import { SwitchService } from './services/switch.service';
+import { CountingService } from './services/counting.service';
+
+import { ActiveUsersComponent } from './udemy/lesson5/active-users/active-users.component';
+import { InactiveUsersComponent } from './udemy/lesson5/inactive-users/inactive-users.component';
 
 
 @NgModule({
@@ -44,14 +60,24 @@ import { ServerElementComponent } from './udemy/lesson3/server-element/server-el
     ShoppingEditComponent,
     Lesson3Component,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    Lesson4Component,
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    UnlessDirective,
+    DropdownDirective,
+    Lesson5Component,
+    AccountComponent,
+    NewAccountComponent,
+    ActiveUsersComponent,
+    InactiveUsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService, SwitchService, CountingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

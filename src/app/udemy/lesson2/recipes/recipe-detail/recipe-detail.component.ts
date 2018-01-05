@@ -14,4 +14,8 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  logg(tb: HTMLButtonElement) {
+    console.dir(tb);
+  }
+
 }

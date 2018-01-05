@@ -8,6 +8,8 @@ import { GrmComponent } from './grm/grm.component';
 import { Lesson1Component } from './udemy/lesson1/lesson1.component';
 import { Lesson2Component } from './udemy/lesson2/lesson2.component';
 import { Lesson3Component } from './udemy/lesson3/lesson3.component';
+import { Lesson4Component } from './udemy/lesson4/lesson4.component';
+import { Lesson5Component } from './udemy/lesson5/lesson5.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/udemy', pathMatch: 'full' },
@@ -28,6 +30,14 @@ const routes: Routes = [
       {
         path: '3',
         component: Lesson3Component
+      },
+      {
+        path: '4',
+        component: Lesson4Component
+      },
+      {
+        path: '5',
+        component: Lesson5Component
       }
     ]
   }
