@@ -1,3 +1,7 @@
+import { ServerResolverService } from './services/server-resolver.service';
+import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -49,6 +53,7 @@ import { ReditServerComponent } from './udemy/lesson6/rservers/redit-server/redi
 import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.component';
 import { RuserComponent } from './udemy/lesson6/rusers/ruser/ruser.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -88,14 +93,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReditServerComponent,
     RserverComponent,
     RuserComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService, ShoppingListService, ServersService],
+  providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService,
+    ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

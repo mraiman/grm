@@ -1,3 +1,4 @@
+import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -8,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RhomeComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -16,6 +17,14 @@ export class RhomeComponent implements OnInit {
   onLoadServers(id: number) {
     this.router.navigate(['servers', id, 'edit'], { relativeTo: this.route, queryParams: { allowEdit: '1' }, fragment: 'loading' });
 
+  }
+
+  onLogin() {
+    this.authService.login();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 
 }
