@@ -9,8 +9,6 @@ import { AccountsService } from '../../services/accounts.service';
 })
 export class Lesson5Component implements OnInit {
   accounts: { name: string, status: string }[] = [];
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
 
   constructor(private accountsService: AccountsService) { }
 
@@ -24,16 +22,6 @@ export class Lesson5Component implements OnInit {
 
   onStatusChanged(updateInfo: { id: number, newStatus: string }) {
     this.accounts[updateInfo.id].status = updateInfo.newStatus;
-  }
-
-  onSetToInactive(id: number) {
-    this.inactiveUsers.push(this.activeUsers[id]);
-    this.activeUsers.splice(id, 1);
-  }
-
-  onSetToActive(id: number) {
-    this.activeUsers.push(this.inactiveUsers[id]);
-    this.inactiveUsers.splice(id, 1);
   }
 
 }

@@ -35,10 +35,20 @@ import { AccountsService } from './services/accounts.service';
 import { LoggingService } from './services/logging.service';
 import { SwitchService } from './services/switch.service';
 import { CountingService } from './services/counting.service';
+import { RecipeService } from './services/recipe.service';
+import { ShoppingListService } from './services/shopping-list.service';
+import { ServersService } from './services/servers.service';
 
 import { ActiveUsersComponent } from './udemy/lesson5/active-users/active-users.component';
 import { InactiveUsersComponent } from './udemy/lesson5/inactive-users/inactive-users.component';
-
+import { Lesson6Component } from './udemy/lesson6/lesson6.component';
+import { RhomeComponent } from './udemy/lesson6/rhome/rhome.component';
+import { RserversComponent } from './udemy/lesson6/rservers/rservers.component';
+import { RusersComponent } from './udemy/lesson6/rusers/rusers.component';
+import { ReditServerComponent } from './udemy/lesson6/rservers/redit-server/redit-server.component';
+import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.component';
+import { RuserComponent } from './udemy/lesson6/rusers/ruser/ruser.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -70,14 +80,22 @@ import { InactiveUsersComponent } from './udemy/lesson5/inactive-users/inactive-
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    Lesson6Component,
+    RhomeComponent,
+    RserversComponent,
+    RusersComponent,
+    ReditServerComponent,
+    RserverComponent,
+    RuserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [AccountsService, LoggingService, SwitchService, CountingService],
+  providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService, ShoppingListService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
