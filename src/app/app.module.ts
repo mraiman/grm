@@ -5,6 +5,7 @@ import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -54,6 +55,10 @@ import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.compo
 import { RuserComponent } from './udemy/lesson6/rusers/ruser/ruser.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { RecipeDefaultComponent } from './udemy/lesson2/recipes/recipe-default/recipe-default.component';
+import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-edit.component';
+import { Lesson7Component } from './udemy/lesson7/lesson7.component';
+import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 
 @NgModule({
   declarations: [
@@ -94,12 +99,17 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     RserverComponent,
     RuserComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    RecipeDefaultComponent,
+    RecipeEditComponent,
+    Lesson7Component,
+    Lesson8Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService,
     ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService],

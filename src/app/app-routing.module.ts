@@ -1,3 +1,9 @@
+import { Lesson7Component } from './udemy/lesson7/lesson7.component';
+import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-edit.component';
+import { RecipeDefaultComponent } from './udemy/lesson2/recipes/recipe-default/recipe-default.component';
+import { RecipeDetailComponent } from './udemy/lesson2/recipes/recipe-detail/recipe-detail.component';
+import { ShoppingListComponent } from './udemy/lesson2/shopping-list/shopping-list.component';
+import { RecipesComponent } from './udemy/lesson2/recipes/recipes.component';
 import { ServerResolverService } from './services/server-resolver.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
@@ -23,6 +29,7 @@ import { RserversComponent } from './udemy/lesson6/rservers/rservers.component';
 import { RuserComponent } from './udemy/lesson6/rusers/ruser/ruser.component';
 import { ReditServerComponent } from './udemy/lesson6/rservers/redit-server/redit-server.component';
 import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.component';
+import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/udemy', pathMatch: 'full' },
@@ -38,7 +45,40 @@ const routes: Routes = [
       },
       {
         path: '2',
-        component: Lesson2Component
+        component: Lesson2Component,
+        children: [
+          {
+            path: '',
+            redirectTo: 'udemy/2/recipes',
+            pathMatch: 'full'
+          },
+          {
+            path: 'recipes',
+            component: RecipesComponent,
+            children: [
+              {
+                path: '',
+                component: RecipeDefaultComponent,
+              },
+              {
+                path: 'new',
+                component: RecipeEditComponent
+              },
+              {
+                path: ':id',
+                component: RecipeDetailComponent
+              },
+              {
+                path: ':id/edit',
+                component: RecipeEditComponent
+              }
+            ]
+          },
+          {
+            path: 'shopping-list',
+            component: ShoppingListComponent
+          }
+        ]
       },
       {
         path: '3',
@@ -89,12 +129,20 @@ const routes: Routes = [
             ]
           }
         ]
+      },
+      {
+        path: '7',
+        component: Lesson7Component
+      },
+      {
+        path: '8',
+        component: Lesson8Component
       }
     ]
   },
   // { path: 'not-found', component: PageNotFoundComponent },
-  { path: 'not-found', component: ErrorPageComponent, data: { message: 'Page not found!' } },
-  { path: '**', redirectTo: '/not-found' }
+  // { path: 'not-found', component: ErrorPageComponent, data: { message: 'Page not found!' } },
+  // { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({

@@ -2,7 +2,15 @@
   <div class="col-md-5">
     <app-recipe-list></app-recipe-list>
   </div>
-  <div class="col-md-7" *ngIf="displayDetails">
-    <app-recipe-detail [recipe]="singleRecipe"></app-recipe-detail>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
+    <!-- <ng-container *ngIf="displayDetails; else elseTemplate">
+      <router-outlet></router-outlet>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <app-recipe-default></app-recipe-default>
+    </ng-template> -->
+
+    <!-- <app-recipe-detail [recipe]="singleRecipe"></app-recipe-detail> -->
   </div>
 </div>
