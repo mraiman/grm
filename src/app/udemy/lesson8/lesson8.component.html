@@ -6,7 +6,8 @@
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" class="form-control" formControlName="username">
-            <span *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched" class="help-block">Please enter correct name</span>
+            <span *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched" class="help-block">
+              <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">Forbidden Name! </span> Please enter correct name</span>
           </div>
           <div class="form-group">
             <label for="email">email</label>
@@ -20,13 +21,44 @@
             <input type="radio" [value]="gender" formControlName="gender">{{ gender }}
           </label>
         </div>
-        <div>
+        <div formArrayName="hobbies">
           <h4>Your Hobbies</h4>
-          <button class="btn btn-default" type="button">Add Hobby</button>
+          <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+          <div class="form-group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+            <input type="text" class="form-control" [formControlName]="i">
+          </div>
         </div>
         <span *ngIf="!signupForm.valid && signupForm.touched" class="help-block">Please enter valid data!</span>
         <br>
         <br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="projectForm" (ngSubmit)="onSubmitProjectForm()">
+        <div class="form-group">
+          <label for="pname">Project Name</label>
+          <input type="text" class="form-control" id="pname" formControlName="pname">
+        </div>
+        <div class="form-group">
+          <label for="pemail">Project Email</label>
+          <input type="email" id="pemail" class="form-control" formControlName="pemail">
+        </div>
+        <div class="form-group">
+          <label for="pstatus">Project Status</label>
+          <select name="pstatus" id="pstatus" class="form-control" formControlName="pstatus">
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
+          </select>
+        </div>
+        <p *ngIf="!projectForm.valid">Form is not valid</p>
         <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>

@@ -1,3 +1,90 @@
-<p>
-  sandbox works!!
-</p>
+<h3>Анкета для сайта знакомств</h3>
+<br>
+<form>
+  <div style="margin: 10px">
+    <label for="name" style="width: 150px">Имя</label>
+    <input type="text" id="name" required>
+  </div>
+  <div style="margin: 10px">
+    <label for="surname" style="width: 150px">Фамилия</label>
+    <input type="text" id="surname" required>
+  </div>
+  <div style="margin: 10px">
+    <label for="radio" style="width: 150px">Ищу</label>
+    <span div id="radio">
+      <input type="radio" id="radio1" name="gender" value="male">
+      <label for="radio1">Мужчину</label>
+      <input type="radio" id="radio2" name="gender" value="female">
+      <label for="radio2">Женщину</label>
+    </span>
+  </div>
+  <div style="margin: 10px">
+    <label for="sel" style="width: 150px">Для</label>
+    <select name="sel" id="sel">
+      <option value="friendship">Дружбы</option>
+      <option value="love" selected="selected">Романтических отношений</option>
+      <option value="sex">Секса</option>
+    </select>
+  </div>
+  <div>
+    <p>Искать анкеты только с фото
+      <span>
+        <input type="checkbox" id="checkBox" name="checkBox" value="foto">
+      </span>
+    </p>
+  </div>
+  <div style="margin: 10px">
+    <label for="myFile" style="width: 150px">Загрузить моё фото</label>
+    <input name="myFile" id="myFile" type="file">
+  </div>
+  <br>
+  <button type="reset">Очистить анкету</button>
+  <button type="submit">Искать</button>
+
+</form>
+<br>
+<br>
+<table>
+  <tr>
+    <th colspan="3">
+      <p class="header" align="center">Рецепт на каждый день</p>
+    </th>
+  </tr>
+  <tr>
+    <td style="width: 30%">
+      <div class="img_wrap">
+        <img class="img_img" src="http://pcheliniydom.ru/wp-content/uploads/2016/01/sdfeal3.jpg" alt="Овсяное печенье">
+        <p class="img_text">Рецепт печенья</p>
+      </div>
+
+    </td>
+    <td>
+      <br>
+      <p id="ovs">Овсяное печенье с мёдом</p>
+      <div id="div1">Время приготовления 25 минут</div>
+      <p>
+        Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта
+        печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья.
+        Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст
+        рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта
+        печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья.
+        Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст
+        рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта печенья. Тут текст рецепта
+
+      </p>
+    </td>
+    <td width="25%">Для приготовления
+      <span style="color: red; font-weight: bold">овсяного печенья</span> нужно...
+      <ul>
+        <li>хлопья</li>
+        <li>масло</li>
+        <li>мёд</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <p class="lastrow">Автор страницы: Демидюк Юля</p>
+    </td>
+  </tr>
+</table>
