@@ -59,6 +59,7 @@ import { RecipeDefaultComponent } from './udemy/lesson2/recipes/recipe-default/r
 import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-edit.component';
 import { Lesson7Component } from './udemy/lesson7/lesson7.component';
 import { Lesson8Component } from './udemy/lesson8/lesson8.component';
+import { Lesson9Component } from './udemy/lesson9/lesson9.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { Lesson8Component } from './udemy/lesson8/lesson8.component';
     RecipeDefaultComponent,
     RecipeEditComponent,
     Lesson7Component,
-    Lesson8Component
+    Lesson8Component,
+    Lesson9Component
   ],
   imports: [
     BrowserModule,

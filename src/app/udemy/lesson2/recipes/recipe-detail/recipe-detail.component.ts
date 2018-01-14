@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './recipe-detail.component.html',
   styleUrls: ['./recipe-detail.component.css']
 })
-export class RecipeDetailComponent implements OnInit, OnDestroy {
+export class RecipeDetailComponent implements OnInit {
   recipe: Classes.Recipe;
   paramsSubscription: Subscription;
 
@@ -25,10 +25,12 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
         this.recipe = this.recipeService.getRecipes()[params['id']];
       }
     );
-  }
-
-  ngOnDestroy() {
-    this.paramsSubscription.unsubscribe();
+    this.recipeService.recipeDeleted.subscribe(() => {
+      this.router.navigate(['/udemy/2/recipes']);
+    });
+    this.recipeService.recipesChanged.subscribe(() => {
+      this.recipe = this.recipeService.getRecipes()[id];
+    });
   }
 
   logg(tb: HTMLButtonElement) {
@@ -37,6 +39,10 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
 
   addToShopping() {
     this.shoppingListService.addToShopping(this.recipe);
+  }
+
+  onDelete() {
+    this.recipeService.deleteRecipe(this.recipe.id);
   }
 
 }

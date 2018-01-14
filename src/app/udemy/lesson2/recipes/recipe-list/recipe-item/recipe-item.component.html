@@ -1,4 +1,4 @@
-<a style="cursor: pointer" class="list-group-item clearfix" [routerLink]="['/udemy/2/recipes/', item.id]" routerLinkActive="active">
+<a style="cursor: pointer" class="list-group-item clearfix" [routerLink]="['/udemy/2/recipes/', item.id]" routerLinkActive="active" (click)="logItem()">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{item.name}}</h4>
     <p class="list-group-item-text">{{item.description}}</p>
