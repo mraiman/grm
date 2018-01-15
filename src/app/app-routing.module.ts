@@ -31,6 +31,7 @@ import { ReditServerComponent } from './udemy/lesson6/rservers/redit-server/redi
 import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.component';
 import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 import { Lesson9Component } from './udemy/lesson9/lesson9.component';
+import { Lesson10Component } from './udemy/lesson10/lesson10.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/udemy', pathMatch: 'full' },
@@ -142,6 +143,10 @@ const routes: Routes = [
       {
         path: '9',
         component: Lesson9Component
+      },
+      {
+        path: '10',
+        component: Lesson10Component
       }
     ]
   },

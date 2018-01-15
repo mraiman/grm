@@ -7,6 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -62,6 +63,10 @@ import { Lesson7Component } from './udemy/lesson7/lesson7.component';
 import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 import { Lesson9Component } from './udemy/lesson9/lesson9.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { ReversePipe } from './pipes/reverse.pipe';
+import { OrderPipe } from './pipes/order.pipe';
+import { Lesson10Component } from './udemy/lesson10/lesson10.component';
+import { ServerService } from './services/server.service';
 
 @NgModule({
   declarations: [
@@ -109,16 +114,20 @@ import { FilterPipe } from './pipes/filter.pipe';
     Lesson8Component,
     Lesson9Component,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    ReversePipe,
+    OrderPipe,
+    Lesson10Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService,
-    ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService],
+    ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

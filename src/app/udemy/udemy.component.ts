@@ -17,6 +17,7 @@ export class UdemyComponent implements OnInit {
   lesson7: Classes.UdemyLesson;
   lesson8: Classes.UdemyLesson;
   lesson9: Classes.UdemyLesson;
+  lesson10: Classes.UdemyLesson;
   lessons: Classes.UdemyLesson[] = [];
 
   constructor(public router: Router) {
@@ -29,6 +30,7 @@ export class UdemyComponent implements OnInit {
     this.lesson7 = new Classes.UdemyLesson('Forms1', 7);
     this.lesson8 = new Classes.UdemyLesson('Forms2', 8);
     this.lesson9 = new Classes.UdemyLesson('Pipes', 9);
+    this.lesson10 = new Classes.UdemyLesson('Http', 10);
     this.lessons.push(this.lesson1);
     this.lessons.push(this.lesson2);
     this.lessons.push(this.lesson3);
@@ -38,6 +40,7 @@ export class UdemyComponent implements OnInit {
     this.lessons.push(this.lesson7);
     this.lessons.push(this.lesson8);
     this.lessons.push(this.lesson9);
+    this.lessons.push(this.lesson10);
   }
 
   ngOnInit() {
