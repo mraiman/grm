@@ -1,3 +1,4 @@
+import { ShortenPipe } from './pipes/shorten.pipe';
 import { ServerResolverService } from './services/server-resolver.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -60,6 +61,7 @@ import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-
 import { Lesson7Component } from './udemy/lesson7/lesson7.component';
 import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 import { Lesson9Component } from './udemy/lesson9/lesson9.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -105,7 +107,9 @@ import { Lesson9Component } from './udemy/lesson9/lesson9.component';
     RecipeEditComponent,
     Lesson7Component,
     Lesson8Component,
-    Lesson9Component
+    Lesson9Component,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
