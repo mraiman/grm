@@ -7,6 +7,7 @@ import { ServerService } from '../../services/server.service';
   styleUrls: ['./lesson10.component.css']
 })
 export class Lesson10Component implements OnInit {
+  appName = this.serverService.getAppName();
   servers = [
     {
       name: 'Testserver',
@@ -37,9 +38,23 @@ export class Lesson10Component implements OnInit {
   }
 
   onSave() {
-    this.serverService.storeServers(this.servers).subscribe((response) => {
-      console.log(response);
-    },
+    this.serverService.storeServers(this.servers).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => console.log(error));
+  }
+
+  onGet() {
+    this.serverService.getServers().subscribe(
+      (response) => {
+        let conv: { name: string, capacity: number, id: number }[] = [];
+        conv = JSON.parse(response);
+        for (const server of conv) {
+          server['name'] = 'FETCHED_' + server['name'];
+        }
+        this.servers = conv;
+      },
       (error) => console.log(error));
   }
 

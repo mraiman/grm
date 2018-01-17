@@ -1,3 +1,4 @@
+import { SignupComponent } from './udemy/lesson2/auth/signup/signup.component';
 import { Lesson7Component } from './udemy/lesson7/lesson7.component';
 import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-edit.component';
 import { RecipeDefaultComponent } from './udemy/lesson2/recipes/recipe-default/recipe-default.component';
@@ -79,6 +80,10 @@ const routes: Routes = [
           {
             path: 'shopping-list',
             component: ShoppingListComponent
+          },
+          {
+            path: 'signup',
+            component: SignupComponent
           }
         ]
       },

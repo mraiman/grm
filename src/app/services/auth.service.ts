@@ -1,3 +1,5 @@
+import * as firebase from 'firebase';
+
 export class AuthService {
     loggedIn = false;
 
@@ -18,5 +20,11 @@ export class AuthService {
 
     logout() {
         this.loggedIn = false;
+    }
+
+    signupUser(email: string, password: string) {
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(
+            error => console.log(error)
+        );
     }
 }

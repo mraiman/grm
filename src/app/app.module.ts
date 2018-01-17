@@ -67,6 +67,8 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { OrderPipe } from './pipes/order.pipe';
 import { Lesson10Component } from './udemy/lesson10/lesson10.component';
 import { ServerService } from './services/server.service';
+import { SignupComponent } from './udemy/lesson2/auth/signup/signup.component';
+import { SigninComponent } from './udemy/lesson2/auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +119,9 @@ import { ServerService } from './services/server.service';
     FilterPipe,
     ReversePipe,
     OrderPipe,
-    Lesson10Component
+    Lesson10Component,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
