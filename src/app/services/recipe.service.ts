@@ -1,5 +1,6 @@
+import { AuthService } from './auth.service';
 import { Recipe } from './../classes/classes';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpRequest } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import * as Classes from '../classes/classes';
 import { Subject } from 'rxjs/Subject';
@@ -22,7 +23,7 @@ export class RecipeService {
       [new Classes.Ingredient('dgfdt', 2), new Classes.Ingredient('milk', 1)])
   ];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   getRecipes() {
     return this.recipes.slice();
@@ -49,11 +50,28 @@ export class RecipeService {
   }
 
   storeRecipes() {
-    return this.http.put('https://udemy-ng-http-abae0.firebaseio.com/recipes.json', this.getRecipes());
+    const token = this.authService.getToken();
+
+    // return this.http.put('https://udemy-ng-http-abae0.firebaseio.com/recipes.json', this.getRecipes(), {
+    //   observe: 'body',
+    //   params: new HttpParams().set('auth', token)
+    //   // headers: new HttpHeaders().set('Authorization', 'Bearer hdiuhduqwhd').append('name', 'value')
+    // });
+
+    const req = new HttpRequest('PUT', 'https://udemy-ng-http-abae0.firebaseio.com/recipes.json', this.getRecipes(),
+      { reportProgress: true, params: new HttpParams().set('auth', token) });
+    return this.http.request(req);
   }
 
   getRecipesFromDB() {
-    this.http.get('https://udemy-ng-http-abae0.firebaseio.com/recipes.json').map((response: Classes.Recipe[]) => {
+    const token = this.authService.getToken();
+
+    this.http.get('https://udemy-ng-http-abae0.firebaseio.com/recipes.json?auth=' + token, {
+      // body:
+      // headers:
+      // observe: 'response',
+      // responseType: 'text'
+    }).map((response: Classes.Recipe[]) => {
       const recipes: Classes.Recipe[] = response;
       for (const recipe of recipes) {
         if (!recipe['ingredients']) {

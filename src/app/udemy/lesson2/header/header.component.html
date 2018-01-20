@@ -14,9 +14,19 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <ng-template [ngIf]="!authService.isAuthenticatedFire()">
+          <li>
+            <a routerLink="/udemy/2/signup">Register</a>
+          </li>
+          <li>
+            <a routerLink="/udemy/2/signin">Login</a>
+          </li>
+        </ng-template>
+
         <li>
-          <a routerLink="/udemy/2/signup">Register</a>
+          <a style="cursor: pointer" (click)=logoutFire() *ngIf="authService.isAuthenticatedFire()">Logout</a>
         </li>
+
         <li class="dropdown" appDropdown>
           <a class="dropdown-toggle" role="button">Manage
             <span class="caret"></span>

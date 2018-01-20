@@ -1,3 +1,5 @@
+import { LazyComponent } from './udemy/lesson10/lazy/lazy.component';
+import { RecipeAuthGuardService } from './services/recipe-auth-guard.service';
 import { SignupComponent } from './udemy/lesson2/auth/signup/signup.component';
 import { Lesson7Component } from './udemy/lesson7/lesson7.component';
 import { RecipeEditComponent } from './udemy/lesson2/recipes/recipe-edit/recipe-edit.component';
@@ -33,6 +35,7 @@ import { RserverComponent } from './udemy/lesson6/rservers/rserver/rserver.compo
 import { Lesson8Component } from './udemy/lesson8/lesson8.component';
 import { Lesson9Component } from './udemy/lesson9/lesson9.component';
 import { Lesson10Component } from './udemy/lesson10/lesson10.component';
+import { SigninComponent } from './udemy/lesson2/auth/signin/signin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/udemy', pathMatch: 'full' },
@@ -65,6 +68,7 @@ const routes: Routes = [
               },
               {
                 path: 'new',
+                canActivate: [RecipeAuthGuardService],
                 component: RecipeEditComponent
               },
               {
@@ -73,6 +77,7 @@ const routes: Routes = [
               },
               {
                 path: ':id/edit',
+                canActivate: [RecipeAuthGuardService],
                 component: RecipeEditComponent
               }
             ]
@@ -84,6 +89,10 @@ const routes: Routes = [
           {
             path: 'signup',
             component: SignupComponent
+          },
+          {
+            path: 'signin',
+            component: SigninComponent
           }
         ]
       },
@@ -152,6 +161,10 @@ const routes: Routes = [
       {
         path: '10',
         component: Lesson10Component
+      },
+      {
+        path: 'lazy',
+        loadChildren: './udemy/lesson2/recipes/recipes.module#RecipeModule'
       }
     ]
   },

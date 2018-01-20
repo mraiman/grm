@@ -1,3 +1,4 @@
+import { RecipeAuthGuardService } from './services/recipe-auth-guard.service';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { ServerResolverService } from './services/server-resolver.service';
 import { CanDeactivateGuard } from './services/can-deactivate-guard.service';
@@ -69,6 +70,7 @@ import { Lesson10Component } from './udemy/lesson10/lesson10.component';
 import { ServerService } from './services/server.service';
 import { SignupComponent } from './udemy/lesson2/auth/signup/signup.component';
 import { SigninComponent } from './udemy/lesson2/auth/signin/signin.component';
+import { RecipeModule } from './udemy/lesson2/recipes/recipes.module';
 
 @NgModule({
   declarations: [
@@ -128,10 +130,12 @@ import { SigninComponent } from './udemy/lesson2/auth/signin/signin.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RecipeModule
   ],
   providers: [AccountsService, LoggingService, SwitchService, CountingService, RecipeService,
-    ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService, ServerService],
+    ShoppingListService, ServersService, AuthService, AuthGuardService, CanDeactivateGuard, ServerResolverService, ServerService,
+    RecipeAuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

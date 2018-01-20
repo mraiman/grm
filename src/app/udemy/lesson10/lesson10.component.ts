@@ -1,3 +1,5 @@
+import { AuthService } from './../../services/auth.service';
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { ServerService } from '../../services/server.service';
 
@@ -7,7 +9,7 @@ import { ServerService } from '../../services/server.service';
   styleUrls: ['./lesson10.component.css']
 })
 export class Lesson10Component implements OnInit {
-  appName = this.serverService.getAppName();
+  appName: Observable<any>;
   servers = [
     {
       name: 'Testserver',
@@ -21,7 +23,7 @@ export class Lesson10Component implements OnInit {
     }
   ];
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService, private authService: AuthService) { }
 
   onAddServer(name: string) {
     this.servers.push({
@@ -35,6 +37,8 @@ export class Lesson10Component implements OnInit {
     return Math.round(Math.random() * 10000);
   }
   ngOnInit() {
+    this.authService.getToken();
+    this.appName = this.serverService.getAppName();
   }
 
   onSave() {
@@ -48,6 +52,8 @@ export class Lesson10Component implements OnInit {
   onGet() {
     this.serverService.getServers().subscribe(
       (response) => {
+        console.log('onGet');
+        console.log(response);
         let conv: { name: string, capacity: number, id: number }[] = [];
         conv = JSON.parse(response);
         for (const server of conv) {

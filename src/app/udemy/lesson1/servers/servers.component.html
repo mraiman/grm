@@ -4,6 +4,7 @@
 <br>
 <p>{{serverName}}</p>
 <button class="btn btn-info" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server!</button>
+<a class="btn btn-info" routerLink="/udemy/lazy">Lazy</a>
 <br>
 <br>
 <p [innerText]="allowNewServer ? 'you can do it' : 'you cannot do it'"></p>
